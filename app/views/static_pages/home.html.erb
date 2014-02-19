@@ -1,0 +1,51 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span5">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span7">
+      <h3>Post feed</h3>
+      <%= render 'shared/feed' %>
+     </div> 
+     </div>
+<% else %>
+  <div class="center hero-unit">
+      <h1>Welcome to the Sample</h1>
+      <h2>
+        This is the home page for the
+        <a href="http://railstutorial.org/">Fuelsaver sample </a>
+      </h2>
+      <div>
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %><br>
+      </div><br>
+      <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="active item", align="center">
+            <%= link_to image_tag("paris-traffic.jpg", alt: "Rails" , size: "600x400") %>
+          </div>
+          <div class="item", align="center">
+            <%= link_to image_tag("rails.png", alt: "Rails", size: "300x400") %>    
+          </div>
+          <div class="item", align="center">
+            <%= link_to image_tag("ActCarPool_img.jpg", alt: "Rails" , size: "500x400") %>
+          </div>
+          <div class="item", align="center">
+            <%= link_to image_tag("lets-car-pool-sign-240x300.jpg", alt: "Rails", size: "350x600") %>
+          </div>
+          <div class="item", align="center">
+            <%= link_to image_tag("aju.jpg", alt: "Rails", size: "550x500") %>
+          </div>
+        </div>
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+  </div>
+ <% end %>
