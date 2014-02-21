@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.paginate(page: params[:page])
+    @microposts = Micropost.all
   end
 
   def following
@@ -78,7 +79,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone_no)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone_no, :image)
     end
 
     def signed_in_user

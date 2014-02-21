@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+mount_uploader :image, ImageUploader
 validates :name, presence: true, length: {maximum: 50}
 #VALID_EMAIL_REGEX = /\A[\W+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 validates :email, presence: true, uniqueness: { case_sensitive: false }
@@ -7,7 +8,6 @@ has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 has_many :followed_users, through: :relationships, source: :followed
 has_many :reverse_relationships, foreign_key: "followed_id", class_name:  "Relationship", dependent:   :destroy
 has_many :followers, through: :reverse_relationships, source: :follower
-
 has_secure_password
 validates :password, length: { minimum: 6 }
 before_save { self.email = email.downcase }

@@ -1,7 +1,9 @@
 <li>
-	<%= gravatar_for user, size: 52 %>
+	<%= image_tag user.image_url(:thumb).to_s %>
 	<%= link_to user.name, user %>
+	<%= render user.microposts %>
 	<% if current_user.admin? && !current_user?(user) %> 
 	| <%= link_to "delete", user, method: :delete, data: { confirm: "you sure?" } %>
+	<%= will_paginate user %>
 	<% end -%>
 </li>
