@@ -1,1 +1,13 @@
-<%= render @users %>
+<% if current_user.admin? && !current_user?(@user) %> 
+  <ol class="microposts">
+  <% @users.each do |user| %>  
+    <%= render user %>
+    <%= link_to "delete", user, method: :delete, data: { confirm: "you sure?" } %>
+ <% end %>
+  <% else %>	
+  <% @users.each do |user| %>  
+    <%= render user %>
+  </ol>
+  <% end %>
+  <% end %>
+  <% will_paginate @users %>

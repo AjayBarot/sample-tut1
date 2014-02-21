@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+
   # GET /users/1
   # GET /users/1.json
   def show
@@ -68,7 +69,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted."
-    redirect_to users_url  
+    redirect_to root_url
   end
 
     # Use callbacks to share common setup or constraints between actions.

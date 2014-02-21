@@ -20,9 +20,6 @@ class MicropostsController < ApplicationController
 	def show
 		@microposts = Micropost.all
 		@users = User.all
-		puts "----------------------------------"
-		puts "#{@users}"
-		puts "----------------------------------"
 	end
 
 	private 

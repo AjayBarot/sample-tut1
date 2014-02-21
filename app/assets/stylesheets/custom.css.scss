@@ -9,7 +9,6 @@ body {
 }
 
 section {
-  overflow: auto;
 }
 
 textarea {
@@ -113,6 +112,10 @@ aside {
       margin-bottom: 3px;
       line-height: 1;
     }
+    textarea {
+    height: 100px;
+    margin-bottom: 5px;
+    }
     h1 {
       font-size: 1.4em;
       text-align: left;
@@ -122,7 +125,6 @@ aside {
     }
   }
 }
-
 .gravatar {
   float: left;
   margin-right: 10px;
@@ -181,16 +183,7 @@ input {
 .timestamp {
   color: $grayLight;
 }
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
+
 .stats {
   overflow: auto;
   a {
@@ -214,8 +207,14 @@ aside {
 
 .user_avatars {
   overflow: auto;
-  margin-top: 10px;
+  margin-top: 1px;
   .gravatar {
     margin: 1px 1px;
   }
+}
+.notification-icon .glyphocon {
+  
+}
+.notification-icon .badge{
+  
 }

@@ -12,7 +12,7 @@
       <% if @users.any? %>
         <div class="user_avatars">
           <% @users.each do |user| %>
-            <%= image_tag @user.image_url(:thumb).to_s %>
+            <%= image_tag user.image_url(:thumb).to_s %>
           <% end %>
         </div>
       <% end %>
